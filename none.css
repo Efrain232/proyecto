@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:width@400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; /* Evita el desbordamiento */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vh; /* Ajusta esto según necesites */
+    height: 100vw; /* Ajusta esto según necesites */
+    background-image: url(../_.jpeg);
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%) rotate(90deg); /* Rota la imagen 90 grados */
+    z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+/*header*/
+
+header{
+    position: fixed;
+    top: 5%;
+    left: -4%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+/*logo*/
+
+.logo{
+    font-size: 2.3rem;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+    margin-left: 8%;
+}
+
+/*navegacion */
+
+.navegacion a{
+    position: relative;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navegacion a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s;
+}
+
+.navegacion a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navegacion .btn{
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.navegacion .btn:hover{
+    background: #fff;
+    color: #111;
+}
